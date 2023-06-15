@@ -1,4 +1,4 @@
-package restclient
+package godat
 
 import (
 	"encoding/json"
