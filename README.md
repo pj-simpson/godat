@@ -1,6 +1,6 @@
 # GoDat #
 
-GoDat is an Unofficial Go client library for interacting with the [Codat API][https://docs.codat.io/accounting-api#/].
+GoDat is an Unofficial Go library for interacting with the [Codat API](https://docs.codat.io/accounting-api#/).
 
 ## Installation ##
 
