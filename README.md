@@ -5,7 +5,7 @@ GoDat is an Unofficial Go library for interacting with the [Codat API](https://d
 ## Installation ##
 
 ```bash
-go get https://github.com/pj-simpson/godat
+go get github.com/pj-simpson/godat
 ```
 
 ## Usage ##
@@ -18,21 +18,31 @@ This will return a single page of 25 companies from the Codat system,
 parsed into a go type. 
 
 ```go
+package main
 
-token := os.Getenv("CODAT_TOKEN")
-codat := restclient.NewCodatClient(token)
-page := &models.PaginatedResponseOptions{
-    Page:     1,
-    PageSize: 25,
+import (
+	"fmt"
+	"os"
+
+	"github.com/pj-simpson/godat"
+)
+
+func main() {
+	token := os.Getenv("CODAT_TOKEN")
+	codat := godat.NewCodatClient(token)
+	page := godat.PaginatedResponseOptions{
+		Page:     1,
+		PageSize: 25,
+	}
+
+	trans, err := codat.GetCompanies(page)
+
+	if err != nil {
+		fmt.Printf("%#v", err)
+	}
+
+	fmt.Printf("%#v", trans)
 }
-
-trans, err := codat.GetCompanies(page)
-
-if err != nil {
-    fmt.Printf("%#v", err)
-}
-
-fmt.Printf("%#v", trans)
 
 ```
 ## License ##
