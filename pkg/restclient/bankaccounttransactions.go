@@ -3,7 +3,7 @@ package godat
 import (
 	"net/http"
 
-	"github.com/pj-simpson/godat/src/models"
+	"github.com/pj-simpson/godat/pkg/models"
 )
 
 func (c *Client) GetBankAccountTransactions(companyId string, connectionId string, accountId string, options *models.PaginatedResponseOptions) (*models.PaginatedResponse[models.BankAccountTransaction], error) {

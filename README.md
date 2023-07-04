@@ -35,13 +35,13 @@ func main() {
 		PageSize: 25,
 	}
 
-	trans, err := codat.GetCompanies(page)
+	comps, err := codat.GetCompanies(page)
 
 	if err != nil {
 		fmt.Printf("%#v", err)
 	}
 
-	fmt.Printf("%#v", trans)
+	fmt.Printf("%#v", comps)
 }
 
 ```

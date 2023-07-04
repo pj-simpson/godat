@@ -7,8 +7,8 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/pj-simpson/godat/src/models"
-	"github.com/pj-simpson/godat/src/urlparser"
+	"github.com/pj-simpson/godat/pkg/models"
+	"github.com/pj-simpson/godat/pkg/urlparser"
 )
 
 const (
