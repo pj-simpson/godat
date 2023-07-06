@@ -11,22 +11,22 @@ import (
 	"github.com/pj-simpson/godat/pkg/urlparser"
 )
 
-const (
-	codatProdBaseURL = "https://api.codat.io/"
-)
-
 type Client struct {
 	APIKey     string
 	HTTPClient *http.Client
 	UrlParser  *urlparser.UrlParser
 }
 
+const (
+	CodatProdBaseURL = "https://api.codat.io/"
+)
+
 func NewCodatClient(APIKey string) *Client {
 	return &Client{
 		APIKey:     APIKey,
 		HTTPClient: &http.Client{},
 		UrlParser: &urlparser.UrlParser{
-			BaseURL: codatProdBaseURL,
+			BaseURL: CodatProdBaseURL,
 		},
 	}
 }
