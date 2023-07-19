@@ -1,6 +1,6 @@
 # GoDat #
 
-GoDat is an Unofficial Go library for interacting with the [Codat API](https://docs.codat.io/accounting-api#/).
+GoDat is an Unofficial Go library for interacting with the [Codat API](https://docs.codat.io/).
 
 ## Installation ##
 
@@ -12,10 +12,8 @@ go get github.com/pj-simpson/godat
 
 Get the Codat token from an enviroment variable.
 Create a new Codat REST client. 
-Set the pagination query params via the PaginatedResponseOptions struct. 
-Call the 'Get Companies' method. 
-This will return a single page of 25 companies from the Codat system, 
-parsed into a go type. 
+Set the pagination query params via the PaginatedResponseOptions struct, to obtain 25 comapanies. 
+Call the 'Get Companies' method and print out the result. 
 
 ```go
 package main
@@ -24,18 +22,19 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/pj-simpson/godat"
+	"github.com/pj-simpson/godat/pkg/godat"
+	"github.com/pj-simpson/godat/pkg/models"
 )
 
 func main() {
 	token := os.Getenv("CODAT_TOKEN")
 	codat := godat.NewCodatClient(token)
-	page := godat.PaginatedResponseOptions{
+	page := models.PaginatedResponseOptions{
 		Page:     1,
 		PageSize: 25,
 	}
 
-	comps, err := codat.GetCompanies(page)
+	comps, err := codat.GetCompanies(&page)
 
 	if err != nil {
 		fmt.Printf("%#v", err)
@@ -44,6 +43,7 @@ func main() {
 	fmt.Printf("%#v", comps)
 }
 
+
 ```
 ## License ##
 
@@ -51,4 +51,4 @@ MIT
 
 ## Caveats ##
 
-This package is a POC really, (currently v 0.0.1), my medium term aim is to wrap the entire Accounting API.  
+Medium term aim for this package is to wrap the entire [Codat Accounting API](https://docs.codat.io/accounting-api#/). 
