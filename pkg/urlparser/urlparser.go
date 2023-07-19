@@ -39,3 +39,11 @@ func (u *UrlParser) MakeGetBankAccountURI(companyId string, connectionId string,
 func (u *UrlParser) MakeGetBankAccountTransactionsURI(companyId string, connectionId string, accountId string, page int, pageSize int, query string, orderBy string) string {
 	return fmt.Sprintf("%scompanies/%s/connections/%s/data/bankAccounts/%s/bankTransactions?page=%d&pageSize=%d&query=%s&orderby=%s", u.BaseURL, companyId, connectionId, accountId, page, pageSize, query, orderBy)
 }
+
+func (u *UrlParser) MakeGetBillsURI(companyId string, page int, pageSize int, query string, orderBy string) string {
+	return fmt.Sprintf("%scompanies/%s/data/bills?page=%d&pageSize=%d&query=%s&orderby=%s", u.BaseURL, companyId, page, pageSize, query, orderBy)
+}
+
+func (u *UrlParser) MakeGetBillURI(companyId string, billId string) string {
+	return fmt.Sprintf("%scompanies/%s/data/bills/%s", u.BaseURL, companyId, billId)
+}

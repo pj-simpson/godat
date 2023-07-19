@@ -59,9 +59,9 @@ type AccountRef struct {
 }
 
 type TaxRateRef struct {
-	ID               string `json:"id"`
-	Name             string `json:"name"`
-	EffectiveTaxRate int    `json:"effectiveTaxRate"`
+	ID               string  `json:"id"`
+	Name             string  `json:"name"`
+	EffectiveTaxRate float64 `json:"effectiveTaxRate"`
 }
 
 type ItemRef struct {
@@ -97,14 +97,14 @@ type Payment struct {
 	Currency     string     `json:"currency"`
 	CurrencyRate int        `json:"currencyRate"`
 	PaidOnDate   string     `json:"paidOnDate"`
-	TotalAmount  int        `json:"totalAmount"`
+	TotalAmount  float64    `json:"totalAmount"`
 }
 
 type Allocation struct {
-	Currency        string `json:"currency"`
-	CurrencyRate    int    `json:"currencyRate"`
-	AllocatedOnDate string `json:"allocatedOnDate"`
-	TotalAmount     int    `json:"totalAmount"`
+	Currency        string  `json:"currency"`
+	CurrencyRate    float64 `json:"currencyRate"`
+	AllocatedOnDate string  `json:"allocatedOnDate"`
+	TotalAmount     float64 `json:"totalAmount"`
 }
 
 type PaymentAllocation struct {
