@@ -67,3 +67,13 @@ func (u *UrlParser) MakeGetBillCreditNotesURI(companyId string, page int, pageSi
 func (u *UrlParser) MakeGetBillCreditNoteURI(companyId string, billCreditNoteId string) string {
 	return fmt.Sprintf("%scompanies/%s/data/billCreditNotes/%s", u.BaseURL, companyId, billCreditNoteId)
 }
+
+// Bill Payments
+
+func (u *UrlParser) MakeGetBillPaymentsURI(companyId string, page int, pageSize int, query string, orderBy string) string {
+	return fmt.Sprintf("%scompanies/%s/data/billPayments?page=%d&pageSize=%d&query=%s&orderby=%s", u.BaseURL, companyId, page, pageSize, query, orderBy)
+}
+
+func (u *UrlParser) MakeGetBillPaymentURI(companyId string, billPaymentId string) string {
+	return fmt.Sprintf("%scompanies/%s/data/billPayments/%s", u.BaseURL, companyId, billPaymentId)
+}

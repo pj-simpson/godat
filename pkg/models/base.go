@@ -111,3 +111,8 @@ type PaymentAllocation struct {
 	Payment    Payment    `json:"payment"`
 	Allocation Allocation `json:"allocation"`
 }
+
+type PaymentMethodRef struct {
+	ID   string `json:"id"`
+	Name string `json:"name"`
+}
