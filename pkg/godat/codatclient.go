@@ -31,6 +31,16 @@ func NewCodatClient(APIKey string) *Client {
 	}
 }
 
+func NewCodatClientWithURLOverride(APIKey string, BaseUrlOverride string) *Client {
+	return &Client{
+		APIKey:     APIKey,
+		HTTPClient: &http.Client{},
+		UrlParser: &urlparser.UrlParser{
+			BaseURL: BaseUrlOverride,
+		},
+	}
+}
+
 func (c *Client) PaginatedResponseParser(options *models.PaginatedResponseOptions) (int, int, string, string) {
 	pos := options
 

@@ -1,0 +1,58 @@
+{
+    "results": [
+      {
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "name": "string",
+        "description": "string",
+        "platform": "string",
+        "redirect": "string",
+        "lastSync": "2023-08-31T15:11:01.275Z",
+        "dataConnections": [
+          {
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "integrationId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "integrationKey": "string",
+            "sourceId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+            "platformName": "string",
+            "linkUrl": "string",
+            "status": "string",
+            "lastSync": "2023-08-31T15:11:01.275Z",
+            "created": "2023-08-31T15:11:01.275Z",
+            "sourceType": "string",
+            "dataConnectionErrors": [
+              {
+                "statusCode": "string",
+                "statusText": "string",
+                "errorMessage": "string",
+                "erroredOnUtc": "2023-08-31T15:11:01.275Z"
+              }
+            ],
+            "connectionInfo": {
+              "additionalProp1": "string",
+              "additionalProp2": "string",
+              "additionalProp3": "string"
+            }
+          }
+        ],
+        "created": "2023-08-31T15:11:01.275Z",
+        "createdByUserName": "string"
+      }
+    ],
+    "pageNumber": 0,
+    "pageSize": 0,
+    "totalResults": 0,
+    "_links": {
+      "self": {
+        "href": "string"
+      },
+      "current": {
+        "href": "string"
+      },
+      "next": {
+        "href": "string"
+      },
+      "previous": {
+        "href": "string"
+      }
+    }
+  }
