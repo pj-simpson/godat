@@ -36,6 +36,9 @@ func TestClientGetCompanies(t *testing.T) {
 
 	// set up the mock server
 	mockCodat := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if r.URL.Path != "/companies" {
+			t.Errorf("Expected to request '/companies', got: %s", r.URL.Path)
+		}
 		w.WriteHeader(http.StatusOK)
 		w.Write(companiesJSONRespAsBytes)
 	}))
